@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collisionOffest = 0.05f;
     public ContactFilter2D movementFilter;
+    public BasicAttack basicAttack;
+
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -81,6 +83,18 @@ public class PlayerController : MonoBehaviour
 
     void OnFire() {
         animator.SetTrigger("basicAttack");
+    }
+
+    public void BasicAttack() {
+        if (spriteRenderer.flipX == true) {
+            basicAttack.AttackLeft();
+        } else {
+            basicAttack.AttackRight();
+        }
+    }
+
+    public void EndBasicAttack() {
+        basicAttack.StopAttack();
     }
 
     public void LockMovement() {
