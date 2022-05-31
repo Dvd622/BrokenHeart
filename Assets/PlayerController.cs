@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class PlayerController : MonoBehaviour
     public float collisionOffest = 0.05f;
     public ContactFilter2D movementFilter;
     public BasicAttack basicAttack;
+    public int health = 6;
+    public int numOfHearts = 3;
+
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite halfHeart;
+    int heartsToShow;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -28,6 +36,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        heartsToShow = health / 2;
+        for (int i = 0; i < hearts.Length; i++) {
+            if (i < heartsToShow) {
+                hearts[i].sprite = fullHeart;
+            } else if (i == heartsToShow && health % 2 == 1) {
+                hearts[i].sprite = halfHeart;
+            } else {
+                hearts[i].enabled = false;
+            }
+        }
+
         if (canMove) {
             // If movement input is not 0, try to move
             if (movementInput != Vector2.zero)

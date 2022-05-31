@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    Animator animator;
+    public Collider2D enemyCollider;
+    public int damage = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,9 +30,25 @@ public class Enemy : MonoBehaviour
         get { return health; }
     }
 
-    public float health = 1;
+    public float health = 10;
 
     public void Defeated() {
+        animator.SetTrigger("Defeated");
+    }
+
+    public void RemoveEnemy() {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player") {
+            // Deal damage to enemy
+            PlayerController player = other.GetComponent<PlayerController>();
+
+            if (player != null) {
+                player.health -= damage;
+                print(player.health);
+            }
+        }
     }
 }

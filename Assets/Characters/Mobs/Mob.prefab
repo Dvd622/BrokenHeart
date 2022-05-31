@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 445162067092164196}
   - component: {fileID: 6993019032780173225}
   - component: {fileID: 8527223206909826580}
+  - component: {fileID: 5061916454842885615}
   m_Layer: 0
   m_Name: Mob
   m_TagString: Enemy
@@ -146,3 +147,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f2f6115390fd448bc1b666ece1d8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCollider: {fileID: 6993019032780173225}
+  damage: 1
+  health: 1
+--- !u!95 &5061916454842885615
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957304149918748962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c05c5977f04def4d8ed4d03b397139a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
