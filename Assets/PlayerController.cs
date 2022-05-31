@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (health <= 0) {
+            Die();
+        }
+
         if (canMove) {
             // If movement input is not 0, try to move
             if (movementInput != Vector2.zero)
@@ -122,5 +126,9 @@ public class PlayerController : MonoBehaviour
 
     public void UnlockMovement() {
         canMove = true;
+    }
+
+    public void Die() {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
