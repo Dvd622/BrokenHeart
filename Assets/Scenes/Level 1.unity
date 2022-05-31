@@ -3833,6 +3833,10 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1025600145573113946, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 2192466105345111670, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: m_Size.x
       value: 0.24
@@ -3914,6 +3918,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 8582303805646849586}
+    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: fullHeart
       value: 
       objectReference: {fileID: 21300000, guid: c3496db35b9ea5f41b6c2bdab0cf1067, type: 3}
@@ -3950,5 +3958,10 @@ PrefabInstance:
 --- !u!4 &8582303805646849585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5463179798555903655, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
+  m_PrefabInstance: {fileID: 8582303805646849584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8582303805646849586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8318208661261216270, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
   m_PrefabInstance: {fileID: 8582303805646849584}
   m_PrefabAsset: {fileID: 0}

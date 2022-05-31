@@ -73,6 +73,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   attackCollider: {fileID: 1045314879730414432}
+--- !u!1 &6111023704184561981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8318208661261216270}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8318208661261216270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111023704184561981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5463179798555903655}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8600624891436974220
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +139,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1025600145573113946}
+  - {fileID: 8318208661261216270}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,6 +254,13 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   basicAttack: {fileID: 3435046926424083573}
+  health: 6
+  numOfHearts: 3
+  firePoint: {fileID: 8318208661261216270}
+  bulletPrefab: {fileID: 1614979261985354909, guid: 1f186ef771c96f343b35917443727b9f, type: 3}
+  hearts: []
+  fullHeart: {fileID: 0}
+  halfHeart: {fileID: 0}
 --- !u!50 &3196521289901483162
 Rigidbody2D:
   serializedVersion: 4

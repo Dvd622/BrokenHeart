@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +13,15 @@ public class PlayerController : MonoBehaviour
     public BasicAttack basicAttack;
     public int health = 6;
     public int numOfHearts = 3;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
     int heartsToShow;
+
+    private bool Facing_Right = true;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -71,10 +76,10 @@ public class PlayerController : MonoBehaviour
             }
 
             // Set direction of sprite to movement direction
-            if (movementInput.x < 0) {
-                spriteRenderer.flipX = true;
-            } else if (movementInput.x > 0) {
-                spriteRenderer.flipX = false;
+            if (movementInput.x < 0 && Facing_Right) {
+                Flip();
+            } else if (movementInput.x > 0 && !Facing_Right) {
+                Flip();
             }
         }
     }
@@ -100,12 +105,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Flip() {
+        Facing_Right = !Facing_Right;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>(); 
     }
 
     void OnFire() {
         animator.SetTrigger("basicAttack");
+    }
+
+    void OnFire2() {
+        animator.SetTrigger("shoot");
+        Shoot();
+    }
+
+    void OnInteract() {
+        print("Interact");
     }
 
     public void BasicAttack() {
@@ -118,6 +137,11 @@ public class PlayerController : MonoBehaviour
 
     public void EndBasicAttack() {
         basicAttack.StopAttack();
+    }
+
+    public void Shoot() {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
     }
 
     public void LockMovement() {
