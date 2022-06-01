@@ -23,6 +23,7 @@ public class AmmoPickupScript : MonoBehaviour
 
             if (player != null) {
                 player.ammo += 3;
+                Destroy(gameObject);
             }
         }
     }

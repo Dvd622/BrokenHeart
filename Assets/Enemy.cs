@@ -4,20 +4,38 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
+    
     public Collider2D enemyCollider;
     public int damage = 1;
+    public float moveSpeed = 1f;
+    public float detectDistance = 0.48f;
+
+    Animator animator;
+    Vector2 direction;
+    GameObject target;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        target = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void FixedUpdate() {
+        if (target != null) {
+            direction = target.transform.position - transform.position;
+            if (Mathf.Abs(direction.x) < detectDistance && Mathf.Abs(direction.y) < detectDistance) {
+                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            }
+        }
     }
 
     public float Health {

@@ -23,6 +23,7 @@ public class HealthPickupScript : MonoBehaviour
 
             if (player != null) {
                 player.health += 2;
+                Destroy(gameObject);
             }
         }
     }
