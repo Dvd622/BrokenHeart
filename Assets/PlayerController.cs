@@ -13,12 +13,18 @@ public class PlayerController : MonoBehaviour
     public BasicAttack basicAttack;
     public int health = 6;
     public int numOfHearts = 3;
+    public int ammo = 3;
     public Transform firePoint;
     public GameObject bulletPrefab;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite halfHeart;
+    public Image ammoUI;
+    public Sprite ammo3;
+    public Sprite ammo2;
+    public Sprite ammo1;
+    public Sprite ammo0;
     int heartsToShow;
 
     private bool Facing_Right = true;
@@ -52,8 +58,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (ammo==3) {
+            ammoUI.sprite = ammo3;
+        } else if (ammo==2) {
+            ammoUI.sprite = ammo2;
+        } else if (ammo==1) {
+            ammoUI.sprite = ammo1;
+        } else {
+            ammoUI.sprite = ammo0;
+        }
+
         if (health <= 0) {
-            Die();
+            animator.SetTrigger("dead");
         }
 
         if (canMove) {
@@ -119,8 +135,11 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire2() {
-        animator.SetTrigger("shoot");
-        Shoot();
+        if (ammo>0) {
+            ammo -= 1;
+            animator.SetTrigger("shoot");
+            Shoot();
+        }
     }
 
     void OnInteract() {
