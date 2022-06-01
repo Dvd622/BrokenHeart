@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public int ammo = 3;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public Dialogue dialogue;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -142,7 +143,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire() {
-        animator.SetTrigger("basicAttack");
+        // if there is dialogue
+        if (dialogue.gameObject.activeSelf) {
+            dialogue.Continue();
+        } else {
+            animator.SetTrigger("basicAttack");
+        }
     }
 
     void OnFire2() {

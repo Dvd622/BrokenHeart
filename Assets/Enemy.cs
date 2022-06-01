@@ -65,7 +65,6 @@ public class Enemy : MonoBehaviour
 
             if (player != null) {
                 player.health -= damage;
-                print(player.health);
             }
         }
     }
