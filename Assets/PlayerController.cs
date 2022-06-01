@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float collisionOffest = 0.05f;
     public ContactFilter2D movementFilter;
     public BasicAttack basicAttack;
+    public int maxHealth = 6;
     public int health = 6;
     public int numOfHearts = 3;
     public int ammo = 3;
@@ -48,14 +49,22 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         heartsToShow = health / 2;
-        for (int i = 0; i < hearts.Length; i++) {
+        for (int i = 0; i < maxHealth/2; i++) {
             if (i < heartsToShow) {
                 hearts[i].sprite = fullHeart;
+                hearts[i].enabled = true;
             } else if (i == heartsToShow && health % 2 == 1) {
                 hearts[i].sprite = halfHeart;
+                hearts[i].enabled = true;
             } else {
                 hearts[i].enabled = false;
             }
+        }
+
+        if (ammo>3) {
+            ammo = 3;
+        } else if (ammo<0) {
+            ammo = 0;
         }
 
         if (ammo==3) {
@@ -64,12 +73,14 @@ public class PlayerController : MonoBehaviour
             ammoUI.sprite = ammo2;
         } else if (ammo==1) {
             ammoUI.sprite = ammo1;
-        } else {
+        } else if (ammo<=0) {
             ammoUI.sprite = ammo0;
         }
 
         if (health <= 0) {
             animator.SetTrigger("dead");
+        } else if (health > maxHealth) {
+            health = maxHealth;
         }
 
         if (canMove) {
