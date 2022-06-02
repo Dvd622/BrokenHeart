@@ -21,12 +21,10 @@ public class Interact : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        print("interacted");
         if (other.tag == "NPC") {
             // Get dialogue lines from NPC
             NPC npc = other.GetComponent<NPC>();
             if (npc != null) {
-                print(npc);
                 dialogue.lines = new string[npc.lines.Length];
                 dialogue.lines = npc.lines; 
                 dialogue.StartDialogue();
