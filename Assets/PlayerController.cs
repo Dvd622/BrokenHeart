@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
     public Sprite ammo0;
     int heartsToShow;
 
+    public AudioSource audioSource;
+    public AudioClip shootClip;
+    public AudioClip walkClip;
+    public AudioClip pickupClip;
+    public AudioClip basicAttackClip;
+
     private bool Facing_Right = true;
 
     Vector2 movementInput;
@@ -37,7 +43,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-
+    
     bool canMove = true;
 
     // Start is called before the first frame update
@@ -46,6 +52,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -177,6 +184,8 @@ public class PlayerController : MonoBehaviour
 
     public void BasicAttack() {
         basicAttack.Attack();
+        audioSource.clip = basicAttackClip;
+        audioSource.Play();
     }
 
     public void EndBasicAttack() {
@@ -186,6 +195,8 @@ public class PlayerController : MonoBehaviour
     public void Shoot() {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        audioSource.clip = shootClip;
+        audioSource.Play();
     }
 
     public void LockMovement() {

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public float moveSpeed = 1f;
     public float detectDistance = 0.48f;
+    public AudioSource audioSource;
 
     Animator animator;
     Vector2 direction;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         target = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

@@ -23,6 +23,8 @@ public class AmmoPickupScript : MonoBehaviour
 
             if (player != null) {
                 player.ammo += 3;
+                player.audioSource.clip = player.pickupClip;
+                player.audioSource.Play();
                 Destroy(gameObject);
             }
         }

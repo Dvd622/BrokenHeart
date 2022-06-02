@@ -23,6 +23,8 @@ public class HealthPickupScript : MonoBehaviour
 
             if (player != null) {
                 player.health += 2;
+                player.audioSource.clip = player.pickupClip;
+                player.audioSource.Play();
                 Destroy(gameObject);
             }
         }

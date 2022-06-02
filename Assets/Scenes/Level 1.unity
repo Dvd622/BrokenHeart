@@ -3278,11 +3278,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!61 &952228822 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2047192400355925445, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-  m_PrefabInstance: {fileID: 8582303805646849584}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &959631140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,42 +4422,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 156847383766825165, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: be7520750f3f20d47a04391b969e45ab, type: 3}
-    - target: {fileID: 156847383766825165, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025600145573113946, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2192466105345111670, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Size.x
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2192466105345111670, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Size.y
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2192466105345111670, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2192466105345111670, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5331690160006959545, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 959631144}
-    - target: {fileID: 5331690160006959545, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: interactCollider
-      value: 
-      objectReference: {fileID: 952228822}
     - target: {fileID: 5463179798555903655, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4507,74 +4470,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5621989201339258760, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 799a4d30af92a7e4f925a66ffc63eac8, type: 3}
-    - target: {fileID: 5621989201339258760, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8600624891436974220, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8600624891436974220, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: ammo0
-      value: 
-      objectReference: {fileID: 21300000, guid: cc5da29d89beecc469dc7485aff55036, type: 3}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: ammo1
-      value: 
-      objectReference: {fileID: 21300000, guid: 40cfbb35311dfbc49bd2c3a836f9b91b, type: 3}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: ammo2
-      value: 
-      objectReference: {fileID: 21300000, guid: 8f91d7753076d1c41abcef5ccb8d3555, type: 3}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: ammo3
-      value: 
-      objectReference: {fileID: 21300000, guid: 3d0b485ee950a644e86a3e9a22502371, type: 3}
     - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: ammoUI
       value: 
       objectReference: {fileID: 1876456649}
     - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: health
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: dialogue
       value: 
       objectReference: {fileID: 959631144}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 8582303805646849586}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: fullHeart
-      value: 
-      objectReference: {fileID: 21300000, guid: c3496db35b9ea5f41b6c2bdab0cf1067, type: 3}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: halfHeart
-      value: 
-      objectReference: {fileID: 21300000, guid: 7312261482f72a749b5c7e09eaa7c27f, type: 3}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: numOfHearts
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: collisionOffest
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8849362681263595864, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
@@ -4592,10 +4499,5 @@ PrefabInstance:
 --- !u!4 &8582303805646849585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5463179798555903655, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
-  m_PrefabInstance: {fileID: 8582303805646849584}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8582303805646849586 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8318208661261216270, guid: be889b5da288c614ba88c0c50edeaf57, type: 3}
   m_PrefabInstance: {fileID: 8582303805646849584}
   m_PrefabAsset: {fileID: 0}

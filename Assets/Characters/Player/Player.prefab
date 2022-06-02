@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c798b5ee69c7641a315d8c40a0e2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactCollider: {fileID: 0}
+  interactCollider: {fileID: 2047192400355925445}
   lines: []
   dialogue: {fileID: 0}
 --- !u!1 &8600624891436974220
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 990719166721361138}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,7 +259,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 799a4d30af92a7e4f925a66ffc63eac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: be7520750f3f20d47a04391b969e45ab, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &8849362681263595864
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  collisionOffest: 0.01
+  collisionOffest: 0
   movementFilter:
     useTriggers: 0
     useLayerMask: 0
@@ -338,14 +338,21 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1614979261985354909, guid: 1f186ef771c96f343b35917443727b9f, type: 3}
   dialogue: {fileID: 0}
   interactCollider: {fileID: 2047192400355925445}
-  hearts: []
-  fullHeart: {fileID: 0}
-  halfHeart: {fileID: 0}
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 21300000, guid: c3496db35b9ea5f41b6c2bdab0cf1067, type: 3}
+  halfHeart: {fileID: 21300000, guid: 7312261482f72a749b5c7e09eaa7c27f, type: 3}
   ammoUI: {fileID: 0}
-  ammo3: {fileID: 0}
-  ammo2: {fileID: 0}
-  ammo1: {fileID: 0}
-  ammo0: {fileID: 0}
+  ammo3: {fileID: 21300000, guid: 3d0b485ee950a644e86a3e9a22502371, type: 3}
+  ammo2: {fileID: 21300000, guid: 8f91d7753076d1c41abcef5ccb8d3555, type: 3}
+  ammo1: {fileID: 21300000, guid: 40cfbb35311dfbc49bd2c3a836f9b91b, type: 3}
+  ammo0: {fileID: 21300000, guid: cc5da29d89beecc469dc7485aff55036, type: 3}
+  shootClip: {fileID: 8300000, guid: b3751d78f2dc701438145a71eae5a54f, type: 3}
+  walkClip: {fileID: 8300000, guid: d97762b52e1c13b44bed71f30d23b5f7, type: 3}
+  pickupClip: {fileID: 8300000, guid: 4b28ba13683adb34dac5db870511d393, type: 3}
+  basicAttackClip: {fileID: 8300000, guid: 7cd33bfbe14c2d24dbfa6880512738d4, type: 3}
 --- !u!50 &3196521289901483162
 Rigidbody2D:
   serializedVersion: 4
@@ -424,7 +431,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

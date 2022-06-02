@@ -45,6 +45,7 @@ public class BasicAttack : MonoBehaviour
 
             if (enemy != null) {
                 enemy.Health -= damage;
+                enemy.audioSource.Play();
             }
         }
     }

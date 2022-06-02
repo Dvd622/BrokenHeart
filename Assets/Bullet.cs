@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
 
             if (enemy != null) {
                 enemy.Health -= damage;
+                enemy.audioSource.Play();
             }
         }
         Destroy(gameObject);
