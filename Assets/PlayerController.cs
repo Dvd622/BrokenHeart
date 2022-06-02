@@ -193,6 +193,6 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Die() {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene("Level 1");
     }
 }
