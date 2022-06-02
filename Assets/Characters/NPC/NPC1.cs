@@ -12,7 +12,7 @@ public class NPC1 : NPC
                                 "Player: Listen I just need to ask a couple of questions and then I’ll leave you be.",
                                 "*Villagers stare at the player*", 
                                 "Player: My name is Ed Wójcik, I am looking into the disappearance of my parents.",
-                                "I heard rumours that they were sighted around this area, do these people look familiar to you?",
+                                "Player: I heard rumours that they were sighted around this area, do these people look familiar to you?",
                                 "*Shows picture to villagers*",
                                 "Female Villager: The practitioners", 
                                 "Player: so you do know them. Do you know what happened to them?", 
