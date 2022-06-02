@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public Dialogue dialogue;
+    public Collider2D interactCollider;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
             health = maxHealth;
         }
 
-        if (canMove) {
+        if (canMove && !dialogue.gameObject.activeSelf) {
             // If movement input is not 0, try to move
             if (movementInput != Vector2.zero)
             {
@@ -160,19 +161,22 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnInteract() {
-        print("Interact");
+        StartCoroutine(CheckInteraction());
+    }
+
+    public void CheckInteract() {
+        interactCollider.enabled = true;
+        interactCollider.enabled = false;
+    }
+
+    IEnumerator CheckInteraction() {
+        interactCollider.enabled = true;
+        yield return new WaitForSeconds(1);
+        interactCollider.enabled = false;
     }
 
     public void BasicAttack() {
         basicAttack.Attack();
-        print("attack");
-        /*
-        if (spriteRenderer.flipX == true) {
-            basicAttack.AttackLeft();
-        } else {
-            basicAttack.AttackRight();
-        }
-        */
     }
 
     public void EndBasicAttack() {

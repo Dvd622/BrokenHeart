@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - HealthPickup
   - AmmoPickup
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -15,13 +15,19 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        StartDialogue();
+        gameObject.SetActive(false);
+        // StartDialogue();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void NewLines(string[] newLines) {
+        lines = new string[newLines.Length];
+        lines = newLines;
     }
 
     public void Continue() {
@@ -33,7 +39,9 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue() {
+    public void StartDialogue() {
+        StopAllCoroutines();
+        textComponent.text = string.Empty;
         gameObject.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
