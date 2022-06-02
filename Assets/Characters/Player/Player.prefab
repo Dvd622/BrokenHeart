@@ -254,13 +254,21 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   basicAttack: {fileID: 3435046926424083573}
+  maxHealth: 6
   health: 6
   numOfHearts: 3
+  ammo: 3
   firePoint: {fileID: 8318208661261216270}
   bulletPrefab: {fileID: 1614979261985354909, guid: 1f186ef771c96f343b35917443727b9f, type: 3}
+  dialogue: {fileID: 0}
   hearts: []
   fullHeart: {fileID: 0}
   halfHeart: {fileID: 0}
+  ammoUI: {fileID: 0}
+  ammo3: {fileID: 0}
+  ammo2: {fileID: 0}
+  ammo1: {fileID: 0}
+  ammo0: {fileID: 0}
 --- !u!50 &3196521289901483162
 Rigidbody2D:
   serializedVersion: 4
