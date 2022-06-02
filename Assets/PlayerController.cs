@@ -164,11 +164,15 @@ public class PlayerController : MonoBehaviour
     }
 
     public void BasicAttack() {
+        basicAttack.Attack();
+        print("attack");
+        /*
         if (spriteRenderer.flipX == true) {
             basicAttack.AttackLeft();
         } else {
             basicAttack.AttackRight();
         }
+        */
     }
 
     public void EndBasicAttack() {

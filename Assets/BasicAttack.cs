@@ -20,6 +20,10 @@ public class BasicAttack : MonoBehaviour
         
     }
 
+    public void Attack() {
+        attackCollider.enabled = true;
+    }
+
     public void AttackRight() {
         attackCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
